@@ -121,4 +121,15 @@ add constraint FK_ticket_seance foreign key (id_seance) references Seance (id_se
 
   alter table Ticket
 add constraint FK_ticket_viewer foreign key (id_viewer) references Viewer (id_viewer)
+  
+  alter table Hall
+add constraint FK_Hall_Employees foreign key (id_employees) references Employees (id_employees)
 
+  alter table Hall
+add constraint FK_Hall_Cinema foreign key (id_cinema) references Information_of_cinema (id_cinema)
+
+  alter table Genre_of_film
+add constraint FK_Genre_of_film_Film foreign key (id_film) references Film (id_film)
+
+  alter table Genre_of_film
+add constraint FK_Genre_of_film_Genre foreign key (id_genre_of_film) references  Genre (id_genre)
