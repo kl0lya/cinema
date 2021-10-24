@@ -97,3 +97,10 @@ create table Employees (
   date_of_birth date not null,
   number_of_credit_card int 
   )
+ 
+ 
+alter table Goods 
+add constraint FK_Goods_Employees foreign key (id_employees) references Employees (id_employees)
+
+  alter table Goods
+add constraint FK_Goods_Viewer foreign key (id_viewer) references Viewer (id_viewer)
