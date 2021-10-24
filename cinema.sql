@@ -7,8 +7,7 @@
   id_film int not null,
   date_seance date not null,
   time_seance time not null,
-  film_format nvarchar (10) not null,
-   
+  film_format nvarchar (10) not null, 
   )
 
 
@@ -18,7 +17,7 @@
   id_seance int not null, 
   id_viewer int not null,
   seat int not null,
-  series int not null,
+  row int not null,
   price money not null,
   payment nvarchar (20) not null
   )
@@ -28,13 +27,15 @@
   create table Film (
   id_film int not null primary key,
   name_of_film nvarchar (70) not null,
-  age int,
-  time_film time not null, 
+  age_limit int,
+  duration time not null, 
   country_film nvarchar (30),
   language_of_film nvarchar (20) not null,
-  data_release date not null,
-  data_finish date not null
+  date_release date not null,
+  date_finish date not null
   )
+  
+  
 create table Genre_of_film (
   id_film int not null,
   id_genre_of_film int not null,
