@@ -104,3 +104,21 @@ add constraint FK_Goods_Employees foreign key (id_employees) references Employee
 
   alter table Goods
 add constraint FK_Goods_Viewer foreign key (id_viewer) references Viewer (id_viewer)
+
+
+  alter table Seance
+add constraint FK_seance_information_of_cinema foreign key (id_cinema) references Information_of_cinema (id_cinema)
+
+  alter table Seance
+add constraint FK_seance_film foreign key (id_film) references Film (id_film)
+
+
+  alter table Ticket
+add constraint FK_ticket_hall foreign key (id_hall) references Hall (id_hall)
+
+  alter table Ticket 
+add constraint FK_ticket_seance foreign key (id_seance) references Seance (id_seance)
+
+  alter table Ticket
+add constraint FK_ticket_viewer foreign key (id_viewer) references Viewer (id_viewer)
+
