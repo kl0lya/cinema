@@ -64,3 +64,36 @@ create table Genre_of_film (
   adress_of_cinema nvarchar (50) not null,
   mobile_phone_of_cinema int not null
   )
+
+
+create table Employees (
+  id_employees int not null primary key,
+  surname_of_employees nvarchar (30) not null,
+  name_of_employees nvarchar (30) not null,
+  gender nvarchar (7) not null,
+  date_of_birth date not null,
+  phone_of_employees int not null,
+  number_of_credit_card int not null,
+  data_of_passport nvarchar not null
+  )
+
+
+  create table Goods (
+  id_goods int not null primary key,
+  name_of_goods nvarchar (50) not null,
+  category_of_goods nvarchar (30) not null,
+  id_employees int not null,
+  id_viewer int not null,
+  price_of_goods money not null
+  )
+
+
+  create table Viewer (
+  id_viewer int not null primary key,
+  mobile_phone_of_viewer int not null,
+  surmane_of_viewer nvarchar (30) not null,
+  name_of_viewer nvarchar (30) not null,
+  email nvarchar (70) not null,
+  date_of_birth date not null,
+  number_of_credit_card int 
+  )
