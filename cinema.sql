@@ -62,7 +62,7 @@ create table Genre_of_film (
   name_of_cinema nvarchar (30) not null,
   city nvarchar(40) not null,
   adress_of_cinema nvarchar (50) not null,
-  mobile_phone_of_cinema int not null
+  mobile_phone_of_cinema bigint not null
   )
 
 
@@ -72,9 +72,9 @@ create table Employees (
   name_of_employees nvarchar (30) not null,
   gender nvarchar (7) not null,
   date_of_birth date not null,
-  phone_of_employees int not null,
-  number_of_credit_card int not null,
-  data_of_passport nvarchar not null
+  phone_of_employees bigint not null,
+  number_of_credit_card bigint not null,
+  data_of_passport nvarchar (9) not null
   )
 
 
@@ -90,12 +90,12 @@ create table Employees (
 
   create table Viewer (
   id_viewer int not null primary key,
-  mobile_phone_of_viewer int not null,
+  mobile_phone_of_viewer bigint not null,
   surmane_of_viewer nvarchar (30) not null,
   name_of_viewer nvarchar (30) not null,
   email nvarchar (70) not null,
   date_of_birth date not null,
-  number_of_credit_card int 
+  number_of_credit_card bigint 
   )
  
  
