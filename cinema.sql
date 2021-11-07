@@ -228,8 +228,8 @@ INSERT INTO Genre_of_film VALUES (25,	2)
 
 INSERT INTO Information_of_cinema VALUES (1, 'Planet Cinema 4DX', 'Lviv', 'Pid Dubom Street, 7B', 380800300600)
 INSERT INTO Information_of_cinema VALUES (2, 'Planet Cinema', 'Lviv', 'Stryjska Street, 30', 380800300600)
-INSERT INTO Information_of_cinema VALUES (4, 'Lviv Cinema', 'Lviv', 'Ulas Samchyk Street, 12', 380800400100)
-INSERT INTO Information_of_cinema VALUES (5, 'Multiplex', 'Lviv', 'Kulparkiska Street, 226A', 380800505333)
+INSERT INTO Information_of_cinema VALUES (3, 'Lviv Cinema', 'Lviv', 'Ulas Samchyk Street, 12', 380800400100)
+INSERT INTO Information_of_cinema VALUES (4, 'Multiplex', 'Lviv', 'Kulparkiska Street, 226A', 380800505333)
 
 INSERT INTO Employees VALUES (1, 'Popova', 'Anna', 'Woman', '30.11.1998', 380939789315, 5497593034001564, '009658900')
 INSERT INTO Employees VALUES (2, 'Ruban', 'Sabrina', 'Woman', '04.01.1987', 380970445538, 5454656565344555, '948068112')
@@ -321,3 +321,174 @@ VALUES
 (18,	'Sandora with apple',	'Drinks',	10,	23),
 (19,	'Sandora multifruit',	'Drinks',	10,	23),
 (20,	'Sandora with cherry',	'Drinks',	10,	23)
+
+
+INSERT INTO Hall
+VALUES (11,1, 1,'standart','yes')
+INSERT INTO Hall
+VALUES ( 12 , 4 , 1 ,'standart','no')
+INSERT INTO Hall
+VALUES ( 13 , 5 , 1 ,'standart','yes')
+INSERT INTO Hall
+VALUES ( 14 , 6 , 1 ,'lux','yes')
+INSERT INTO Hall
+VALUES ( 21 , 2 , 2 ,'lux','yes')
+INSERT INTO Hall
+VALUES ( 22 , 3 , 2 ,'standart','no')
+INSERT INTO Hall
+VALUES ( 23 , 7 , 2 , 'standart' , 'yes' )
+INSERT INTO Hall
+VALUES ( 31 , 8 , 3 , 'standart' , 'no' )
+INSERT INTO Hall
+VALUES ( 32 , 9 , 3 , 'standart' , 'no' )
+INSERT INTO Hall
+VALUES ( 33 , 12 , 3 , 'lux' , 'yes' )
+INSERT INTO Hall
+VALUES ( 41 , 11 , 4 , 'standart' , 'yes' )
+INSERT INTO Hall
+VALUES ( 42 , 14 , 4 , 'standart' , 'no' )
+INSERT INTO Hall
+VALUES ( 43 , 15 , 4 , 'standart' , 'yes' )
+
+
+INSERT INTO Order_goods
+VALUES ( 1 , 6 ),
+( 2 , 9 ),
+( 3 , 5 ),
+( 3 , 6 ),
+( 4 , 9 ),
+( 4 , 16 ),
+( 5 , 10 ),
+( 6 , 19 ),
+( 7 , 20 ),
+( 8 , 4 ),
+( 8 , 7 ),
+( 9 , 1 ),
+( 9 , 12 ),
+( 10 , 6 ),
+( 10 , 14 ),
+( 10 , 2 ),
+( 11 , 2 ),
+( 11 , 13 ),
+( 11 , 17 ),
+( 12 , 20 ),
+( 12 , 4 ),
+( 13 , 8 ),
+( 13 , 11 ),
+( 14 , 20 ),
+( 15 , 9 ),
+( 16 , 11 ),
+( 17 , 3 ),
+( 19 , 17 ),
+( 19 , 14 ),
+( 22 , 4 ),
+( 22 , 8 ),
+( 25 , 13 ),
+( 26 , 14 ),
+( 28 , 15 ),
+( 28 , 10 ),
+( 29 , 8 ),
+( 29 , 2 ),
+( 30 , 4 ),
+( 30 , 9 ),
+( 35 , 13 ),
+( 41 , 3 ),
+( 41 , 18 ),
+( 42 , 5 ),
+( 42 , 6 )
+
+INSERT INTO Seance 
+VALUES ( 111 , 1 , 11, '12.11.2021' , '10:00:00','2D' )
+INSERT INTO Seance 
+VALUES ( 112 , 1 , 11, '12.11.2021' , '13:00:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 113 , 1 , 11 , '12.11.2021' , '16:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 114 , 1 , 12 , '16.11.2021' , '10:00:00', '3D' )
+INSERT INTO Seance 
+VALUES ( 115 , 1 , 12 ,'16.11.2021' , '13:10:00' ,'2D' )
+INSERT INTO Seance 
+VALUES ( 116 , 1 , 12 , '16.11.2021' , '15:30:00','4D' )
+INSERT INTO Seance 
+VALUES ( 117 , 1 , 12 , '16.11.2021' , '16:50:00','4D' )
+INSERT INTO Seance 
+VALUES ( 118 , 1 , 12 , '16.11.2021' , '18:30:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 119 , 1 , 13 ,'01.11.2021' , '10:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 120 , 1 , 13 ,'01.11.2021' , '13:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 121 , 1 , 13 , '01.11.2021' , '15:30:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 122 , 1 , 13 , '01.11.2021' , '18:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 123 , 1 , 13 , '02.11.2021' , '10:00:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 124 , 1 , 14 , '29.10.2021' , '10:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 125 , 1 , 14 , '29.10.2021', '13:00:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 126 , 1 , 14 ,  '29.10.2021' , '15:30:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 127 , 1 , 14 , '29.10.2021' , '18:10:00','4D' )
+INSERT INTO Seance 
+VALUES ( 211 , 2 , 21 , '15.11.2021' , '10:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 212 , 2 , 21 , '15.11.2021' , '13:10:00' ,'2D' )
+INSERT INTO Seance 
+VALUES ( 213 , 2 , 21 , '15.11.2021' , '18:30:00' ,'2D' )
+INSERT INTO Seance 
+VALUES ( 214 , 2 , 22 , '23.12.2021', '10:00:00' ,'2D' )
+INSERT INTO Seance 
+VALUES ( 215 , 2 , 22 , '23.12.2021' , '15:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 216 , 2 , 23 , '01.12.2021' , '12:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 217 , 2 , 23 , '01.12.2021' , '16:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 311 , 3 , 31 , '11.11.2021' , '10:00:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 312 , 3 , 31 , '11.11.2021' , '13:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 313 , 3 , 31 , '11.11.2021' , '16:30:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 314 , 3 , 31 , '11.11.2021' , '18:50:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 315 , 3 , 32 , '30.10.2021' , '10:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 316 , 3 , 32 ,'30.10.2021' , '13:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 317 , 3 , 32 , '30.10.2021' , '16:20:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 318 , 3 , 32 ,'30.10.2021' , '18:10:00','4D' )
+INSERT INTO Seance 
+VALUES ( 319 , 3 , 33 , '06.11.2021' , '10:00:00','4D'  )
+INSERT INTO Seance 
+VALUES ( 320 , 3 , 33 , '06.11.2021' , '13:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 321 , 3 , 33 , '06.11.2021' , '18:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 411 , 4 , 41 , '26.11.2021' , '10:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 412 , 4 , 41 , '26.11.2021' , '13:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 413 , 4 , 41 , '26.11.2021' , '16:40:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 414 , 4 , 41 , '26.11.2021' , '18:30:00','4D' )
+INSERT INTO Seance 
+VALUES ( 415 , 4 , 42 , '11.11.2021' , '10:00:00' ,'2D' )
+INSERT INTO Seance 
+VALUES ( 416 , 4 , 42 ,  '11.11.2021' , '12:30:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 417 , 4 , 42 , '11.11.2021' , '15:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 418 , 4 , 42 , '11.11.2021' , '18:10:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 419 , 4 , 43 ,  '05.11.2021' , '10:00:00','2D'  )
+INSERT INTO Seance 
+VALUES ( 420 , 4 , 43 ,  '05.11.2021' , '13:00:00','4D' )
+INSERT INTO Seance 
+VALUES ( 421 , 4 , 43 , '05.11.2021' , '15:30:00','3D'  )
+INSERT INTO Seance 
+VALUES ( 422 , 4 , 43 , '05.11.2021' , '18:10:00','4D' )
+
