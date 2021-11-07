@@ -298,3 +298,26 @@ INSERT INTO Viewer VALUES (47, 380677878333, 'Ponomarenko', 'Myroslav', 'ponomar
 INSERT INTO Viewer VALUES (48, 380989843320, 'Marchenko', 'Maria', 'maria8855@gmail.com', '21.10.2000', 5764485986678756)
 INSERT INTO Viewer VALUES (49, 380997763200, 'Polishchuk', 'Artem', 'Polishchuk.artem12@gmail.com', '29.04.1996', 4645666677434565)
 INSERT INTO Viewer VALUES (50, 380939865601, 'Rudenko', 'Daria', 'rudenko.dariaa@gmail.com', '20.10.2004', 5657686665466876)
+
+
+INSERT INTO Goods
+VALUES 
+(2,	'Salty poprcorn',	'Foods',	13,	25),
+(3,	'Popcorn with bacon',	'Foods',	13,	25),
+(4,	'Popcorn with caramel',	'Foods',	13,	25),
+(5,	'Popcorn with cherry',	'Foods',	13,	25),
+(6,	'Pepsi 0% sugar',	'Drinks',	10,	19),
+(7,	'Pepsi with vanil',	'Drinks',	10,	19),
+(8,	'Pepsi with mango',	'Drinks',	10,	20),
+(9,	'Coca-Cola',	'Drinks',	10,	22),
+(10,	'Coca-Cola 0% sugar',	'Drinks',	10,	21),
+(11,	'Snickers (small)',	'Foods',	13,	12),
+(12,	'Snickers (middle)',	'Foods',	13,	17),
+(13,	'Snickers (big)',	'Foods',	13,	25),
+(14,	'Lays with cheese',	'Foods',	13,	28),
+(15,	'Lays with sour cream',	'Foods',	13,	28),
+(16,	'Lays with bacon',	'Foods',	13,	28),
+(17,	'Sandora with orange',	'Drinks',	10,	23),
+(18,	'Sandora with apple',	'Drinks',	10,	23),
+(19,	'Sandora multifruit',	'Drinks',	10,	23),
+(20,	'Sandora with cherry',	'Drinks',	10,	23)
