@@ -83,7 +83,6 @@ create table Employees (
   name_of_goods nvarchar (50) not null,
   category_of_goods nvarchar (30) not null,
   id_employees int not null,
-  id_viewer int not null,
   price_of_goods money not null
   )
 
@@ -98,12 +97,19 @@ create table Employees (
   number_of_credit_card bigint 
   )
  
+  create table Order_goods(
+  id_viewer int not null,
+  id_goods int not null
+  )
  
-alter table Goods 
+    alter table Goods 
 add constraint FK_Goods_Employees foreign key (id_employees) references Employees (id_employees)
 
-  alter table Goods
-add constraint FK_Goods_Viewer foreign key (id_viewer) references Viewer (id_viewer)
+    alter table Order_goods
+add constraint FK_Order_goods foreign key (id_goods) references Goods (id_goods)
+
+  alter table Order_goods
+add constraint FK_Order_viewer foreign key (id_viewer) references Viewer (id_viewer)
 
 
   alter table Seance
