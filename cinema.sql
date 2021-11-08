@@ -302,6 +302,7 @@ INSERT INTO Viewer VALUES (50, 380939865601, 'Rudenko', 'Daria', 'rudenko.dariaa
 
 INSERT INTO Goods
 VALUES 
+(1,	'Popcorn with cheese',	'Foods',	13,	25),
 (2,	'Salty poprcorn',	'Foods',	13,	25),
 (3,	'Popcorn with bacon',	'Foods',	13,	25),
 (4,	'Popcorn with caramel',	'Foods',	13,	25),
