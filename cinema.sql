@@ -24,16 +24,31 @@
 
 
 
-  create table Film (
+create table Film (
   id_film int not null primary key,
   name_of_film nvarchar (70) not null,
   age_limit int,
   duration time not null, 
-  country_film nvarchar (30),
-  language_of_film nvarchar (20) not null,
+  id_language int not null,
   date_release date not null,
   date_finish date not null
   )
+  
+  
+  create table Language_film(
+ id_language int not null primary key,
+ name_language nvarchar (50) not null
+)
+
+create table Country (
+ id_country int not null primary key,
+ name_country nvarchar (50) not null
+)
+
+create table Country_film (
+ id_film int not null,
+ id_country int not null,
+)
   
   
 create table Genre_of_film (
@@ -140,6 +155,16 @@ add constraint FK_Genre_of_film_Film foreign key (id_film) references Film (id_f
   alter table Genre_of_film
 add constraint FK_Genre_of_film_Genre foreign key (id_genre_of_film) references  Genre (id_genre)
 
+alter table Language_film
+add constraint FK_Lang_film_Film foreign key (id_language) references Film (id_film)
+
+alter table Country_film 
+Add constraint FK_Country_Country_film foreign key (id_country) references Country (id_country)
+
+alter table Country_film 
+add constraint FK_Country_film_Film foreign key (id_country) references film (id_film)
+
+
 
 /* Заповнення таблиць даними */
 
@@ -159,33 +184,95 @@ INSERT INTO Genre VALUES (13, 'detective')
 INSERT INTO Genre VALUES (14, 'history')
 
 
+INSERT INTO Country (id_country, name_country)
+VALUES 
+( 1 , 'USA'),
+( 2 , 'Germany'),
+( 3 , 'Great Britain' ),
+( 4 , 'Canada' ),
+( 5 , 'Poland' ),
+( 6 , 'Italy' ),
+( 7 , 'Iceland' ),
+( 8 , 'Sweden' ),
+( 9 , 'Australia' ),
+( 10 , 'South Africa' ),
+( 11 , 'PAR' ),
+( 12 , 'Georgia'),
+( 13, 'Ukraine')
+
+
+INSERT INTO Language_film (id_language, name_language)
+VALUES 
+( 1 , 'Ukrainian'),
+( 2 , 'French'),
+( 3 , 'English')
+
+
 SET DATEFORMAT dmy;  
 
-INSERT INTO Film VALUES (1,	'Duna',	12,	'2:38:00',	'USA',	'ukrainian',	'16.09.2021',	'27.11.2021')
-INSERT INTO Film VALUES (2,	'The French Dispatch',	16,	'1:48:00',	'USA, Germany',	'ukrainian',	'28.10.2021',	'10.11.2021')
-INSERT INTO Film VALUES (3,	'The Addams Family 2',	0,	'1:33:00',	'USA, Canada',	'ukrainian',	'21.10.2021',	'10.11.2021')
-INSERT INTO Film VALUES (4,	'Initiation',	18,	'1:36:00',	'USA',	'ukrainian',	'28.10.2021',	'03.11.2021')
-INSERT INTO Film VALUES (5,	'Dead in the Water',	16,	'1:32:00',	'USA',	'ukrainian',	'11.11.2021',	'01.12.2021')
-INSERT INTO Film VALUES (6,	'Venom: Let There Be Carnage',	16,	'1:38:00',	'USA',	'English',	'14.10.2021', '03.11.2021')
-INSERT INTO Film VALUES (7,	'Last Night in Soho',	16,	'1:57:00',	'USA, Great Britain',	'Ukrainian',	'28.10.2021',	'10.11.2021')
-INSERT INTO Film VALUES (8,	'No Time to Die',	12,	'2:43:00',	'USA, Great Britain, Australia',	'Ukrainian',	'30.09.2021',	'14.11.2021')
-INSERT INTO Film VALUES (9,	'Spider-Man: No Way Home',	12,	'2:00:00',	'USA',	'English',	'16.12.2021',	'05.01.2022')
-INSERT INTO Film VALUES (10, 'The Eternals',	16,	'2:38:00',	'USA',	'English',	'11.11.2021',	'17.11.2021')
-INSERT INTO Film VALUES (11, 'Never Gonna Snow Again',	16,	 '1:53:00', 	'Poland',	'French',	'04.11.2021',	'07.11.2021')
-INSERT INTO Film VALUES (12, 'The Electrical Life of Louis Wain',	12,	 '2:00:00 ',	'Great Britain',	'Ukrainian',	'11.11.2021',	'24.11.2021')
-INSERT INTO Film VALUES (13, 'Raffaello - Il Genio Sensibile',	0,	 '1:30:00',	'Italy',	'Ukrainian',	'15.11.2021',	'15.11.2021')
-INSERT INTO Film VALUES (14, 'Lamb',	12,	 '1:46:00', 	'Iceland, Sweden, Poland',	'Ukrainian',	'18.11.2021',	'24.11.2021')
-INSERT INTO Film VALUES (15, 'The Matrix 4',	18,		'2:00:00', 	'USA',	'ukrainian',	'22.12.2021',	'30.12.2021')
-INSERT INTO Film VALUES (16, 'House of Gucci',	12,	'2:00:00',	'USA',	'ukrainian',	'25.11.2021',	'01.12.2021')
-INSERT INTO Film VALUES (17, 'Rons Gone Wrong',	0,	'1:47:00', 'USA, Great Britain, Australia',	'Ukrainian',	'14.10.2021',	'03.11.2021')
-INSERT INTO Film VALUES (18, 'Triggered',	18,	'1:34:00',	'South Africa', 'Ukrainian',	'28.10.2021',	'03.11.2021')
-INSERT INTO Film VALUES (19, 'Next Door',	12,	'1:31:00',	'Germany',	'Ukrainian',	'04.11.2021',	'10.11.2021')
-INSERT INTO Film VALUES (20, 'Ghostbusters: Afterlife',	16,	'2:00:00',	'USA',	'ukrainian',	'18.11.2021',	'24.11.2021')
-INSERT INTO Film VALUES (21, 'Gaia',	18,	'1:36:00',	'PAR',	'ukrainian',	'11.11.2021',	'17.11.2021')
-INSERT INTO Film VALUES (22, 'Encanto',	0,	'2:00:00',	'USA',	'English',	'25.11.2021',	'08.12.2021')
-INSERT INTO Film VALUES (23, 'Why am I alive',	16,	'2:00:00',	'Ukraine, Georgia',	'ukrainian',	'04.11.2021',	'17.11.2021')
-INSERT INTO Film VALUES (24, 'Cop shop',	16,	'2:00:00',	'USA',	'ukrainian',	'11.11.2021',	'17.11.2021')
-INSERT INTO Film VALUES (25, 'Antlers',	18,	'1:39:00',	'USA',	'ukrainian',	'25.11.2021',	'15.12.2021')
+INSERT INTO Film VALUES (1,	'Duna',	12,	'2:38:00',	1,	'16.09.2021',	'27.11.2021')
+INSERT INTO Film VALUES (2,	'The French Dispatch',	16,	'1:48:00',		1,	'28.10.2021',	'10.11.2021')
+INSERT INTO Film VALUES (3,	'The Addams Family 2',	0,	'1:33:00',	1,	'21.10.2021',	'10.11.2021')
+INSERT INTO Film VALUES (4,	'Initiation',	18,	'1:36:00',	1,	'28.10.2021',	'03.11.2021')
+INSERT INTO Film VALUES (5,	'Dead in the Water',	16,	'1:32:00',	1,	'11.11.2021',	'01.12.2021')
+INSERT INTO Film VALUES (6,	'Venom: Let There Be Carnage',	16,	'1:38:00',	3,	'14.10.2021', '03.11.2021')
+INSERT INTO Film VALUES (7,	'Last Night in Soho',	16,	'1:57:00',	1,	'28.10.2021',	'10.11.2021')
+INSERT INTO Film VALUES (8,	'No Time to Die',	12,	'2:43:00',	1,	'30.09.2021',	'14.11.2021')
+INSERT INTO Film VALUES (9,	'Spider-Man: No Way Home',	12,	'2:00:00', 3,	'16.12.2021',	'05.01.2022')
+INSERT INTO Film VALUES (10, 'The Eternals',	16,	'2:38:00', 3,	'11.11.2021',	'17.11.2021')
+INSERT INTO Film VALUES (11, 'Never Gonna Snow Again',	16,	 '1:53:00',	2,	'04.11.2021',	'07.11.2021')
+INSERT INTO Film VALUES (12, 'The Electrical Life of Louis Wain',	12,	 '2:00:00 ',	1,	'11.11.2021',	'24.11.2021')
+INSERT INTO Film VALUES (13, 'Raffaello - Il Genio Sensibile',	0,	 '1:30:00',	1,	'15.11.2021',	'15.11.2021')
+INSERT INTO Film VALUES (14, 'Lamb',	12,	 '1:46:00', 1,	'18.11.2021',	'24.11.2021')
+INSERT INTO Film VALUES (15, 'The Matrix 4',	18,		'2:00:00', 1,	'22.12.2021',	'30.12.2021')
+INSERT INTO Film VALUES (16, 'House of Gucci',	12,	'2:00:00',	1,	'25.11.2021',	'01.12.2021')
+INSERT INTO Film VALUES (17, 'Rons Gone Wrong',	0,	'1:47:00',	1,	'14.10.2021',	'03.11.2021')
+INSERT INTO Film VALUES (18, 'Triggered',	18,	'1:34:00', 1,	'28.10.2021',	'03.11.2021')
+INSERT INTO Film VALUES (19, 'Next Door',	12,	'1:31:00',	1,	'04.11.2021',	'10.11.2021')
+INSERT INTO Film VALUES (20, 'Ghostbusters: Afterlife',	16,	'2:00:00',	1,	'18.11.2021',	'24.11.2021')
+INSERT INTO Film VALUES (21, 'Gaia',	18,	'1:36:00',	1,	'11.11.2021',	'17.11.2021')
+INSERT INTO Film VALUES (22, 'Encanto',	0,	'2:00:00',	3,	'25.11.2021',	'08.12.2021')
+INSERT INTO Film VALUES (23, 'Why am I alive',	16,	'2:00:00',	1,	'04.11.2021',	'17.11.2021')
+INSERT INTO Film VALUES (24, 'Cop shop',	16,	'2:00:00',	1,	'11.11.2021',	'17.11.2021')
+INSERT INTO Film VALUES (25, 'Antlers',	18,	'1:39:00',	1,	'25.11.2021',	'15.12.2021')
+
+
+INSERT INTO Country_film ( id_film, id_country )
+VALUES 
+( 1 , 1),
+( 2 , 1),
+( 2 , 2),
+( 3 , 1),
+( 3 , 4),
+( 5 , 1),
+( 6 , 1),
+( 7 , 1),
+( 7 , 3),
+( 8 , 1),
+( 8 , 3),
+( 8 , 9),
+( 9 , 1),
+( 10, 1),
+( 11, 5),
+( 12, 3),
+( 13, 6),
+( 14, 7),
+( 14, 8),
+( 14, 5),
+( 15, 1),
+( 16, 1),
+( 17, 1),
+( 17, 3),
+( 17, 9),
+( 18, 10),
+( 19, 2),
+( 20, 1),
+( 21, 11),
+( 22, 1),
+( 23, 12),
+( 23, 13),
+( 24, 1),
+( 25, 1)
 
 
 INSERT INTO Genre_of_film VALUES (1,	1)
