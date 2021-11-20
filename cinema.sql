@@ -201,13 +201,6 @@ VALUES
 ( 13, 'Ukraine')
 
 
-INSERT INTO Language_film (id_language, name_language)
-VALUES 
-( 1 , 'Ukrainian'),
-( 2 , 'French'),
-( 3 , 'English')
-
-
 SET DATEFORMAT dmy;  
 
 INSERT INTO Film VALUES (1,	'Duna',	12,	'2:38:00',	1,	'16.09.2021',	'27.11.2021')
@@ -235,6 +228,13 @@ INSERT INTO Film VALUES (22, 'Encanto',	0,	'2:00:00',	3,	'25.11.2021',	'08.12.20
 INSERT INTO Film VALUES (23, 'Why am I alive',	16,	'2:00:00',	1,	'04.11.2021',	'17.11.2021')
 INSERT INTO Film VALUES (24, 'Cop shop',	16,	'2:00:00',	1,	'11.11.2021',	'17.11.2021')
 INSERT INTO Film VALUES (25, 'Antlers',	18,	'1:39:00',	1,	'25.11.2021',	'15.12.2021')
+
+
+INSERT INTO Language_film (id_language, name_language)
+VALUES 
+( 1 , 'Ukrainian'),
+( 2 , 'French'),
+( 3 , 'English')
 
 
 INSERT INTO Country_film ( id_film, id_country )
